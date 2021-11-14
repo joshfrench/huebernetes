@@ -1,0 +1,6 @@
+domain: huebernetes.dev
+layout:
+- go.kubebuilder.io/v3
+projectName: huebernetes
+repo: github.com/joshfrench/huebernetes
+version: "3"
