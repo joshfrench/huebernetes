@@ -1,0 +1,20 @@
+# permissions for end users to view lights.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: light-viewer-role
+rules:
+- apiGroups:
+  - services.huebernetes.dev
+  resources:
+  - lights
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - services.huebernetes.dev
+  resources:
+  - lights/status
+  verbs:
+  - get

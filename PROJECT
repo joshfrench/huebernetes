@@ -3,4 +3,13 @@ layout:
 - go.kubebuilder.io/v3
 projectName: huebernetes
 repo: github.com/joshfrench/huebernetes
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: huebernetes.dev
+  group: services
+  kind: Light
+  path: github.com/joshfrench/huebernetes/api/v1alpha1
+  version: v1alpha1
 version: "3"
