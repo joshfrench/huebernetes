@@ -23,19 +23,27 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
+type Metadata struct {
+	//+kubebuilder:validation:MinLength=1
+	//+kubebuilder:validation:MaxLength=32
+	Name string `json:"name"`
+}
+
+type On struct {
+	On bool `json:"on"`
+}
+
 // LightSpec defines the desired state of Light
 type LightSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-
-	// Foo is an example field of Light. Edit light_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	//+kubebuilder:validation:Pattern=`^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$`
+	Id       string `json:"id"`
+	Metadata `json:"metadata"`
+	On       `json:"on"`
 }
 
 // LightStatus defines the observed state of Light
 type LightStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	On `json:"on"`
 }
 
 //+kubebuilder:object:root=true
