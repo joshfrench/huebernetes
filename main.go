@@ -32,6 +32,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
 	servicesv1alpha1 "github.com/joshfrench/huebernetes/api/v1alpha1"
+	"github.com/joshfrench/huebernetes/controllers"
 	//+kubebuilder:scaffold:imports
 )
 
@@ -77,6 +78,13 @@ func main() {
 		os.Exit(1)
 	}
 
+	if err = (&controllers.LightReconciler{
+		Client: mgr.GetClient(),
+		Scheme: mgr.GetScheme(),
+	}).SetupWithManager(mgr); err != nil {
+		setupLog.Error(err, "unable to create controller", "controller", "Light")
+		os.Exit(1)
+	}
 	//+kubebuilder:scaffold:builder
 
 	if err := mgr.AddHealthzCheck("healthz", healthz.Ping); err != nil {
