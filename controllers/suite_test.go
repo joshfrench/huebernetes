@@ -26,7 +26,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/envtest"
 
-	h "github.com/joshfrench/huebernetes/api/v1alpha1"
+	v1alpha1 "huebernetes.dev/api/v1alpha1"
 )
 
 func Test(t *testing.T) { TestingT(t) }
@@ -48,7 +48,7 @@ func (s *ControllerSuite) SetUpSuite(c *C) {
 	c.Assert(err, IsNil)
 	c.Assert(cfg, NotNil)
 
-	err = h.AddToScheme(scheme.Scheme)
+	err = v1alpha1.AddToScheme(scheme.Scheme)
 	c.Assert(err, IsNil)
 
 	//+kubebuilder:scaffold:scheme
