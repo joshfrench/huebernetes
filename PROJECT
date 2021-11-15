@@ -2,7 +2,7 @@ domain: huebernetes.dev
 layout:
 - go.kubebuilder.io/v3
 projectName: huebernetes
-repo: github.com/joshfrench/huebernetes
+repo: huebernetes.dev/huebernetes
 resources:
 - api:
     crdVersion: v1
@@ -11,6 +11,6 @@ resources:
   domain: huebernetes.dev
   group: services
   kind: Light
-  path: github.com/joshfrench/huebernetes/api/v1alpha1
+  path: huebernetes.dev/huebernetes/api/v1alpha1
   version: v1alpha1
 version: "3"

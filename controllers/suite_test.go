@@ -26,7 +26,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/envtest"
 
-	v1alpha1 "huebernetes.dev/api/v1alpha1"
+	v1alpha1 "huebernetes.dev/huebernetes/api/v1alpha1"
 )
 
 func Test(t *testing.T) { TestingT(t) }

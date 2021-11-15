@@ -7,7 +7,7 @@ import (
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	v1alpha1 "huebernetes.dev/api/v1alpha1"
+	v1alpha1 "huebernetes.dev/huebernetes/api/v1alpha1"
 )
 
 func (s *ControllerSuite) TestSanity(c *C) {

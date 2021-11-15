@@ -31,8 +31,8 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/healthz"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	servicesv1alpha1 "github.com/joshfrench/huebernetes/api/v1alpha1"
-	"github.com/joshfrench/huebernetes/controllers"
+	servicesv1alpha1 "huebernetes.dev/huebernetes/api/v1alpha1"
+	"huebernetes.dev/huebernetes/controllers"
 	//+kubebuilder:scaffold:imports
 )
 
